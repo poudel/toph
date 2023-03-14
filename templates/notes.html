@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block nav %}
+    <nav class="container mt-6">
+        <div>
+            <span class="muted">Navigate</span>
+            <a class="ml-6"  href="/">Home</a>
+        </div>
+
+        <h1 class="mb-0"> {{ section.title }} </h1>
+    </nav>
+    <hr class="nav-hr">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% for page in section.pages %}
+            <div class="mt-4">
+                <span class="muted font-monospace">
+                    {{ page.date | date(format=config.extra.notes_date_format) }}
+                </span>
+                <a class="ml-2" href="{{ page.permalink | safe }}">{{ page.title }}</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

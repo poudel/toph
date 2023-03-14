@@ -1,0 +1,14 @@
+name = "toph"
+description = "Minimal theme for personal blog"
+license = "MIT"
+homepage = "https://github.com/poudel/toph"
+min_version = "0.11.0"
+demo = "https://poudel.github.io/toph"
+
+
+[extra]
+
+[author]
+name = "Keshab Paudel"
+homepage = "https://keshp.com"
+

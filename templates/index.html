@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <div class="container">
+
+        <div class="fp-section">
+            <h2>
+                <a href="">Blog</a>
+                <small><a href="{{ get_url(path="rss.xml", trailing_slash=false) }}">(RSS)</a></small>
+            </h2>
+            <p>
+                Essays, random thoughts, and things to remember. Everything goes in here.
+                <a href="">(see all posts)</a>
+            </p>
+        </div>
+
+        <div class="fp-section">
+            <h2>About me</h2>
+            {{ config.extra.about_summary | safe }}
+        </div>
+    </div>
+{% endblock content %}

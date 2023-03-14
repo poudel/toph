@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block nav %}
+    <nav class="container mt-6">
+        <h1 class="mb-0"> {{ taxonomy.name }} </h1>
+        <a href="/">Home</a>
+    </nav>
+    <hr class="nav-hr">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% for item in terms %}
+            <div class="mt-4">
+                <span class="muted font-monospace">
+                    {{ item.page_count }}
+                </span>
+                <a class="ml-2" href="{{ item.permalink | safe }}">{{ item.name }}</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

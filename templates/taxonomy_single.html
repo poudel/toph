@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block nav %}
+    <nav class="container mt-6">
+        <div>
+            <span class="muted">Navigate</span>
+            <a class="ml-6"  href="/">Home</a>
+            <a class="ml-4" href="{{ get_url(path='@/notes/_index.md') }}">Notes</a>
+        </div>
+
+        <h1>{{ term.name }}</h1>
+    </nav>
+    <hr class="nav-hr">
+{% endblock %}
+
+{% block content %}
+    <div class="container note-content mt-4">
+        {% for page in term.pages %}
+            <div class="mt-4">
+                <span class="muted font-monospace">
+                    {{ page.date | date(format=config.extra.notes_date_format) }}
+                </span>
+                <a class="ml-2" href="{{ page.permalink | safe }}">{{ page.title }}</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

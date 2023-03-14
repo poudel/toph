@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block nav %}
+    <nav class="container mt-6">
+        <div>
+            <span class="muted">Navigate</span>
+            <a class="ml-6"  href="/">Home</a>
+            <a class="ml-6" href="{{ get_url(path='@/notes/_index.md') }}">Up</a>
+        </div>
+        <h1 class="title"> {{ page.title }} </h1>
+
+    </nav>
+    <hr class="nav-hr">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% if page.toc and page.extra.show_toc %}
+            <ul>
+                {% for h1 in page.toc %}
+                    <li>
+                        <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+                        {% if h1.children %}
+                            <ul>
+                                {% for h2 in h1.children %}
+                                    <li>
+                                        <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+    <div class="container note-content mt-4">
+        {{ page.content | safe }}
+    </div>
+    <hr>
+    <div class="container mt-4 muted">
+        Posted on {{ page.date | date(format=config.extra.notes_date_format) }}
+        <div class="mt-6">
+            {% for tag_name in page.taxonomies.tags %}
+                {% set tag=get_taxonomy_term(kind="tags", term=tag_name)  %}
+                <a class="tag" href='{{ tag.permalink }}'>{{ tag.name }} <small class="small">({{ tag.page_count }})</small></a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
