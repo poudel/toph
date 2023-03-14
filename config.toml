@@ -16,6 +16,8 @@ taxonomies = [
   { name = "categories", feed = true },
 ]
 
+output_dir = "docs"
+
 
 [markdown]
 # Whether to do syntax highlighting
