@@ -29,12 +29,17 @@ author = "Toph Beifong"
 toph_title = "Toph's Blog"
 disclaimer = "Earth bending can lead to injuries. Only attempt under strict supervision."
 copyright = "Copyright (c) 2023 <a href='https://en.wikipedia.org/wiki/Toph_Beifong'>Toph Beifong</a>. All Rights Reserved."
-about_summary = """
+author_bio_title = "About"
+author_bio_description = """
 <p>Toph is recognized as a prodigy of earthbending, which is the 
-ability to telekinetically manipulate, reshape and control stone,
-sand, dirt, and, later, metal.</p>
+                ability to telekinetically manipulate, reshape and control stone,
+                sand, dirt, and, later, metal.</p>
 
 <p>Toph is fiercely independent, direct, belligerent, and practiced in 
-taunting and insulting her opponents and on occasion her friends, 
-particularly Sokka.</p>
+                taunting and insulting her opponents and on occasion her friends, 
+                particularly Sokka.</p>
+"""
+blog_summary = """
+<p>Essays, random thoughts, and things to remember. Everything goes in here.</p>
+<p>I also put down my earth bending progress here every week. So be sure to check that out.</p>
 """
